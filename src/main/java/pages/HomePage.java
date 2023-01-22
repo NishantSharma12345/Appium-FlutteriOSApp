@@ -6,14 +6,15 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
 
-import helper.AndroidGestures;
+import helper.iOSGestures;
 import helper.AppiumUtils;
-import io.appium.java_client.android.AndroidDriver;
+import io.appium.java_client.ios.IOSDriver;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 import io.appium.java_client.pagefactory.AppiumFieldDecorator;
 
-public class HomePage extends AndroidGestures {
-	AndroidDriver driver;
+public class HomePage extends iOSGestures 
+{
+	IOSDriver driver;
 
 	@AndroidFindBy(xpath = "//android.widget.ScrollView/android.view.View[1]")
 	private WebElement logoutButton;
@@ -48,7 +49,7 @@ public class HomePage extends AndroidGestures {
 	@AndroidFindBy(accessibility = "Send")
 	private WebElement sendButton;
 	
-	public HomePage(AndroidDriver driver) 
+	public HomePage(IOSDriver driver) 
 	{
 		super(driver);
 		this.driver = driver;
@@ -97,8 +98,8 @@ public class HomePage extends AndroidGestures {
 	{
 		for (int i = 2; i < products.size(); i--) 
 		{
-			longClickGesture(products.get(i), "2000");			
-			doubleClickGesture(okayButton);
+			touchAndHoldGesture(products.get(i), "2000");			
+			doubleTapGesture(okayButton);
 			swipeGesture(products.get(i), "right", 0.20);
 			if(i==0) 
 			{

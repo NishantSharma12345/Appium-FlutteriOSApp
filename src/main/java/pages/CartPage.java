@@ -4,13 +4,13 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
 
-import io.appium.java_client.android.AndroidDriver;
+import io.appium.java_client.ios.IOSDriver;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 import io.appium.java_client.pagefactory.AppiumFieldDecorator;
 
 public class CartPage 
 {
-	AndroidDriver driver;
+	IOSDriver driver;
 	
 	@AndroidFindBy(accessibility = "Back")
 	private WebElement backButton;
@@ -24,7 +24,7 @@ public class CartPage
 	@AndroidFindBy(accessibility = "Add Address Now !!")
 	private WebElement addAddressButton;
 	
-	public CartPage(AndroidDriver driver)
+	public CartPage(IOSDriver driver)
 	{
 		this.driver = driver;
 		PageFactory.initElements(new AppiumFieldDecorator(driver), this);

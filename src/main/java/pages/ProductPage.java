@@ -3,15 +3,15 @@ package pages;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
 
-import helper.AndroidGestures;
+import helper.iOSGestures;
 import helper.AppiumUtils;
-import io.appium.java_client.android.AndroidDriver;
+import io.appium.java_client.ios.IOSDriver;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 import io.appium.java_client.pagefactory.AppiumFieldDecorator;
 
-public class ProductPage extends AndroidGestures
+public class ProductPage extends iOSGestures
 {
-	AndroidDriver driver;
+	IOSDriver driver;
 	
 	@AndroidFindBy(xpath = "(//android.widget.Button)[1]")
 	private WebElement backButton;
@@ -25,7 +25,7 @@ public class ProductPage extends AndroidGestures
 	@AndroidFindBy(xpath = "(//android.widget.Button)[2]")
 	private WebElement cartButton;
 	
-	public ProductPage(AndroidDriver driver)
+	public ProductPage(IOSDriver driver)
 	{
 		super(driver);
 		this.driver = driver;
@@ -45,7 +45,7 @@ public class ProductPage extends AndroidGestures
 	
 	public void dragAndDropQuantityInCart()
 	{
-		dragGesture(quantityNumber,959,2000);
+		dragFromToForDurationGesture(quantityNumber,"1.0",555,444,959,2000);
 		AppiumUtils.sleep(4);
 	}
 }

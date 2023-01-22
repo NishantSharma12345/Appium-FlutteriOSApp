@@ -4,14 +4,13 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
 
-import helper.AppiumUtils;
-import io.appium.java_client.android.AndroidDriver;
+import io.appium.java_client.ios.IOSDriver;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 import io.appium.java_client.pagefactory.AppiumFieldDecorator;
 
 public class SignUpPage 
 {
-	AndroidDriver driver;
+	IOSDriver driver;
 	
 	@AndroidFindBy(xpath = "//android.view.View[@content-desc='Sign up']")
 	private WebElement signUpLabel;
@@ -40,7 +39,7 @@ public class SignUpPage
 	@AndroidFindBy(accessibility = "Login")
 	private WebElement loginButton;
 	
-	public SignUpPage(AndroidDriver driver)
+	public SignUpPage(IOSDriver driver)
 	{
 		this.driver = driver;
 		PageFactory.initElements(new AppiumFieldDecorator(driver), this);

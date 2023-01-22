@@ -3,9 +3,9 @@ package pages;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-import baseClass.BaseClassAndroid;
+import baseClass.BaseClassiOS;
 
-public class LoginPageTest extends BaseClassAndroid
+public class LoginPageTest extends BaseClassiOS
 {
 	LoginPage lp;
 	SignUpPage sp;

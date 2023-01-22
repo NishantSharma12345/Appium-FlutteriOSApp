@@ -4,13 +4,13 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
 
-import io.appium.java_client.android.AndroidDriver;
+import io.appium.java_client.ios.IOSDriver;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 import io.appium.java_client.pagefactory.AppiumFieldDecorator;
 
 public class AddAddressPage 
 {
-	AndroidDriver driver;
+	IOSDriver driver;
 	
 	@AndroidFindBy(accessibility = "Add Address")
 	private WebElement addAddressLabel;
@@ -30,7 +30,7 @@ public class AddAddressPage
 	@AndroidFindBy(accessibility = "Checkout Now !!")
 	private WebElement checkoutButton;
 	
-	public AddAddressPage(AndroidDriver driver)
+	public AddAddressPage(IOSDriver driver)
 	{
 		this.driver = driver;
 		PageFactory.initElements(new AppiumFieldDecorator(driver), this);
